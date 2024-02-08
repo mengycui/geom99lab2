@@ -1,5 +1,5 @@
 GEOM99 Lab 2
-Week 3 & Week 4 checlists 
+Week 3 & Week 4 checklists 
 
 Required URLs: 
 URL 1:
