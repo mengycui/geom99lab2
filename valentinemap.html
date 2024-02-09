@@ -45,12 +45,11 @@
         }
       });
 
-      const featureLayer = new FeatureLayer({
-            portalItem: {
-                id: "8582e498be654b0c9733466171119c72"
-            }
-            });
-            map.add(featureLayer);
+      const webmap = new WebMap({
+        portalItem: {
+          id: "8582e498be654b0c9733466171119c72"
+        }
+      });
 
       const graphicsLayer = new GraphicsLayer();
       map.add(graphicsLayer);
