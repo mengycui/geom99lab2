@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Where to buy </title>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.28/"></script>
+
+    <script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+    "esri/Graphic",
+    "esri/layers/GraphicsLayer",
+    "esri/layers/FeatureLayer"
+
+    ], function(esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer) {
+
+        esriConfig.apiKey = "AAPK7af051b3940b4031b5307c866c49cd4dQOds8QzM5Zra67z2f0LGTljXo4ut3oTLl5z4y-aAZ5HyzxTw0XKoa0YUm8NIt3iC";
+      const map = new Map({
+        basemap: "arcgis-topographic" // Basemap layer
+      });
+
+      const view = new MapView({
+        map: map,
+        center: [-79.6484, 43.6026],
+        zoom: 13,
+        container: "viewDiv",
+        constraints: {
+          snapToZoom: false
+        }
+      });
+
+        const fl = new FeatureLayer({
+  portalItem: {  // autocasts as esri/portal/PortalItem
+    id: "8582e498be654b0c9733466171119c72"
+  }
+});
+    map.add(fl);  // adds the layer to the map
+    });
+
+
+      const graphicsLayer = new GraphicsLayer();
+      map.add(graphicsLayer);
+
+      // Point Graphic
+
+      const simpleMarkerSymbol = {
+        type: "simple-marker",
+        color: [226, 119, 40], // Orange
+        outline: {
+          color: [255, 255, 255], // White
+          width: 1
+        }
+      };
+      const pointGraphic = new Graphic({
+        geometry: point,
+        symbol: simpleMarkerSymbol
+      });
+      graphicsLayer.add(pointGraphic);
+
+
+    </script>
+
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
