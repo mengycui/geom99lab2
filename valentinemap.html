@@ -31,50 +31,41 @@
 
       esriConfig.apiKey = "AAPK7af051b3940b4031b5307c866c49cd4dQOds8QzM5Zra67z2f0LGTljXo4ut3oTLl5z4y-aAZ5HyzxTw0XKoa0YUm8NIt3iC";
 
-      const map = new Map({
-        basemap: "arcgis-topographic"
-      });
-
-      const view = new MapView({
-        map: map,
-        center: [-79.6484, 43.6026],
-        zoom: 13,
-        container: "viewDiv",
-        constraints: {
-          snapToZoom: false
-        }
-      });
 
       const webmap = new WebMap({
         portalItem: {
           id: "8582e498be654b0c9733466171119c72"
         }
       });
+      const view = new MapView({
+        container: "viewDiv",
+        map: webmap
+      });
 
-      const graphicsLayer = new GraphicsLayer();
-      map.add(graphicsLayer);
+    //   const graphicsLayer = new GraphicsLayer();
+    //   map.add(graphicsLayer);
 
       // Define the point geometry
-      const point = {
-        type: "point",
-        longitude: -79.6484,
-        latitude: 43.6026
-      };
+    //   const point = {
+    //     type: "point",
+    //     longitude: -79.6484,
+    //     latitude: 43.6026
+    //   };
 
-      // Point Graphic
-      const simpleMarkerSymbol = {
-        type: "simple-marker",
-        color: [226, 119, 40], // Orange
-        outline: {
-          color: [255, 255, 255], // White
-          width: 1
-        }
-      };
-      const pointGraphic = new Graphic({
-        geometry: point,
-        symbol: simpleMarkerSymbol
-      });
-      graphicsLayer.add(pointGraphic);
+    //   // Point Graphic
+    //   const simpleMarkerSymbol = {
+    //     type: "simple-marker",
+    //     color: [226, 119, 40], // Orange
+    //     outline: {
+    //       color: [255, 255, 255], // White
+    //       width: 1
+    //     }
+    //   };
+    //   const pointGraphic = new Graphic({
+    //     geometry: point,
+    //     symbol: simpleMarkerSymbol
+    //   });
+    //   graphicsLayer.add(pointGraphic);
 
     });
   </script>
