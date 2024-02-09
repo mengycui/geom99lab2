@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Where to buy</title>
+  <title>Where to buy chocolates in Mississauga?</title>
 
   <style>
     html,
@@ -45,12 +45,12 @@
         }
       });
 
-      const fl = new FeatureLayer({
-        portalItem: {  // autocasts as esri/portal/PortalItem
-          id: "8582e498be654b0c9733466171119c72"
-        }
-      });
-      map.add(fl);  // adds the layer to the map
+      const featureLayer = new FeatureLayer({
+            portalItem: {
+                id: "8582e498be654b0c9733466171119c72"
+            }
+            });
+            map.add(featureLayer);
 
       const graphicsLayer = new GraphicsLayer();
       map.add(graphicsLayer);
